@@ -19,21 +19,16 @@ const SmoothScrollHeroBackground: React.FC<SmoothScrollHeroProps> = ({
 }) => {
   const { scrollY } = useScroll();
 
-  // Starts full-screen, shrinks as user scrolls
-  const clipStart = useTransform(scrollY, [0, scrollHeight], [0, initialClipPercentage]);
-  const clipEnd   = useTransform(scrollY, [0, scrollHeight], [100, finalClipPercentage]);
+  // Original direction: starts as small rectangle, expands to full screen as user scrolls
+  const clipStart = useTransform(scrollY, [0, scrollHeight], [initialClipPercentage, 0]);
+  const clipEnd   = useTransform(scrollY, [0, scrollHeight], [finalClipPercentage, 100]);
   const clipPath  = useMotionTemplate`polygon(${clipStart}% ${clipStart}%, ${clipEnd}% ${clipStart}%, ${clipEnd}% ${clipEnd}%, ${clipStart}% ${clipEnd}%)`;
-
-  // Subtle zoom-in as image shrinks
-  const backgroundSize = useTransform(scrollY, [0, scrollHeight], ["100%", "118%"]);
-
-  // Fade out before the section ends so no white gap lingers
-  const opacity = useTransform(scrollY, [scrollHeight * 0.55, scrollHeight], [1, 0]);
+  const backgroundSize = useTransform(scrollY, [0, scrollHeight + 500], ["160%", "100%"]);
 
   return (
     <motion.div
       className="sticky top-0 h-screen w-full bg-white"
-      style={{ clipPath, opacity, willChange: "clip-path, opacity" }}
+      style={{ clipPath, willChange: "clip-path" }}
     >
       <motion.div
         className="absolute inset-0 md:hidden"

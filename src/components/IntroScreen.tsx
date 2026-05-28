@@ -6,17 +6,31 @@ import { motion, AnimatePresence } from "framer-motion";
 const EASE: [number, number, number, number] = [0.16, 1, 0.3, 1];
 const EXIT_EASE: [number, number, number, number] = [0.76, 0, 0.24, 1];
 
+function lockScroll() {
+  document.documentElement.style.overflow = "hidden";
+  document.body.style.overflow = "hidden";
+}
+
+function unlockScroll() {
+  document.documentElement.style.overflow = "";
+  document.body.style.overflow = "";
+  // Garante que a página abre no topo da hero, ignorando scroll restoration do browser
+  window.scrollTo({ top: 0, behavior: "instant" as ScrollBehavior });
+}
+
 export default function IntroScreen() {
   const [visible, setVisible] = useState(true);
 
   useEffect(() => {
-    document.body.style.overflow = "hidden";
+    // Desativa scroll restoration automático do browser
+    if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+    lockScroll();
     const t = setTimeout(() => setVisible(false), 2800);
     return () => clearTimeout(t);
   }, []);
 
   return (
-    <AnimatePresence onExitComplete={() => { document.body.style.overflow = ""; }}>
+    <AnimatePresence onExitComplete={unlockScroll}>
       {visible && (
         <motion.div
           key="intro"
@@ -112,7 +126,7 @@ export default function IntroScreen() {
               marginTop: "0.5rem",
             }}
           >
-            Catalao — Goias
+            Catalão — Goiás
           </motion.span>
         </motion.div>
       )}
