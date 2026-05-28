@@ -25,6 +25,15 @@
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+/* Previne flash de conteúdo antes da intro screen montar */
+html[data-intro="loading"] {
+  overflow: hidden;
+  background: #FFFFFF;
+}
+html[data-intro="loading"] body {
+  visibility: hidden;
+}
+
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;

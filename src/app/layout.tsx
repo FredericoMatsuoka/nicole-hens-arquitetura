@@ -13,7 +13,19 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="pt-BR">
+    <html lang="pt-BR" suppressHydrationWarning>
+      <head>
+        {/*
+          Script síncrono: roda ANTES do primeiro paint do browser.
+          Esconde o conteúdo da página enquanto a IntroScreen não monta,
+          eliminando o flash do conteúdo antes da intro aparecer.
+        */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `document.documentElement.setAttribute('data-intro','loading');`,
+          }}
+        />
+      </head>
       <body>{children}</body>
     </html>
   );

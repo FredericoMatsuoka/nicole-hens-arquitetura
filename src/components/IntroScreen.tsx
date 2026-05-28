@@ -22,6 +22,8 @@ export default function IntroScreen() {
   const [visible, setVisible] = useState(true);
 
   useEffect(() => {
+    // Remove o atributo que escondia o conteúdo antes da hydration
+    document.documentElement.removeAttribute("data-intro");
     // Desativa scroll restoration automático do browser
     if ("scrollRestoration" in history) history.scrollRestoration = "manual";
     lockScroll();
