@@ -8,7 +8,7 @@ const EASE = [0.16, 1, 0.3, 1] as [number, number, number, number];
 const links = [
   { label: "Sobre",    href: "#sobre"    },
   { label: "Projetos", href: "#projetos" },
-  { label: "Servicos", href: "#servicos" },
+  { label: "Serviços", href: "#servicos" },
   { label: "Processo", href: "#processo" },
 ];
 

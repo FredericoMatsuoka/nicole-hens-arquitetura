@@ -29,7 +29,7 @@ export default function Footer() {
               </div>
             </div>
             <p style={{ fontFamily: "var(--font-body)", fontSize: "0.82rem", fontWeight: 300, lineHeight: 1.8, color: "rgba(10,10,10,0.45)", maxWidth: "280px", marginBottom: "1.5rem" }}>
-              Espacos que traduzem identidade, elegancia e funcionalidade em cada detalhe. Catalao, Goias.
+              Espaços que traduzem identidade, elegância e funcionalidade em cada detalhe. Catalão, Goiás.
             </p>
 
             {/* Contact info */}
@@ -77,7 +77,7 @@ export default function Footer() {
               {[
                 { label: "Sobre",    href: "#sobre" },
                 { label: "Projetos", href: "#projetos" },
-                { label: "Servicos", href: "#servicos" },
+                { label: "Serviços", href: "#servicos" },
                 { label: "Processo", href: "#processo" },
                 { label: "Contato",  href: "#contato" },
               ].map((l) => (
@@ -112,10 +112,10 @@ export default function Footer() {
         {/* Bottom */}
         <div style={{ marginTop: "3rem", paddingTop: "2rem", borderTop: "1px solid rgba(10,10,10,0.08)", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "1rem" }}>
           <span style={{ fontFamily: "var(--font-body)", fontSize: "0.72rem", fontWeight: 300, color: "rgba(10,10,10,0.3)", letterSpacing: "0.08em" }}>
-            Nicole Hens Arquitetura {ano} — Catalao, Goias
+            Nicole Hens Arquitetura {ano} — Catalão, Goiás
           </span>
           <span style={{ fontFamily: "var(--font-body)", fontSize: "0.72rem", fontWeight: 300, color: "rgba(10,10,10,0.25)", letterSpacing: "0.05em" }}>
-            Espacos que refletem historias, valores e emocoes.
+            Espaços que refletem histórias, valores e emoções.
           </span>
         </div>
       </div>

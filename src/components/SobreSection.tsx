@@ -7,7 +7,7 @@ const EASE: [number, number, number, number] = [0.16, 1, 0.3, 1];
 
 const stats = [
   { value: "42+",  label: "Projetos realizados" },
-  { value: "5+",   label: "Anos de experiencia" },
+  { value: "5+",   label: "Anos de experiência" },
   { value: "100%", label: "Personalizados"      },
 ];
 
@@ -62,14 +62,14 @@ export default function SobreSection() {
             <div className="divider" style={{ marginBottom: "2.5rem" }} />
 
             <h2 className="heading-lg" style={{ marginBottom: "2rem" }}>
-              Criando<br /><em>espacos com alma.</em>
+              Criando<br /><em>espaços com alma.</em>
             </h2>
 
             <p className="body-text" style={{ marginBottom: "1.5rem" }}>
-              Nicole Hens e arquiteta especializada em projetos residenciais e de interiores de alto padrao. Com sede em Catalao, Goias, desenvolve projetos que vao alem da estetica — espacos que contam historias, refletem valores e despertam emocoes.
+              Nicole Hens é arquiteta especializada em projetos residenciais e de interiores de alto padrão. Com sede em Catalão, Goiás, desenvolve projetos que vão além da estética — espaços que contam histórias, refletem valores e despertam emoções.
             </p>
             <p className="body-text" style={{ marginBottom: "3rem" }}>
-              Cada projeto e tratado como unico: um processo de escuta profunda, curadoria de materiais e atencao absoluta aos detalhes. O resultado e um ambiente que e, acima de tudo, seu.
+              Cada projeto é tratado como único: um processo de escuta profunda, curadoria de materiais e atenção absoluta aos detalhes. O resultado é um ambiente que é, acima de tudo, seu.
             </p>
 
             {/* Stats row */}

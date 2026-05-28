@@ -8,20 +8,20 @@ const servicos = [
   {
     num: "01",
     titulo: "Arquitetura Residencial",
-    desc: "Projetos completos de casas e apartamentos, do conceito a entrega. Cada espaco e planejado para refletir a identidade e o estilo de vida do cliente.",
-    itens: ["Projeto arquitetonico", "Aprovacao em prefeitura", "Acompanhamento de obra", "Interiores integrados"],
+    desc: "Projetos completos de casas e apartamentos, do conceito à entrega. Cada espaço é planejado para refletir a identidade e o estilo de vida do cliente.",
+    itens: ["Projeto arquitetônico", "Aprovação em prefeitura", "Acompanhamento de obra", "Interiores integrados"],
   },
   {
     num: "02",
     titulo: "Design de Interiores",
-    desc: "Curadoria completa de ambientes internos — layout, mobiliario, iluminacao, revestimentos e objetos de arte. Harmonioso, funcional e absolutamente seu.",
-    itens: ["Layout e fluxo espacial", "Especificacao de materiais", "Projeto de iluminacao", "Styling e ambientacao"],
+    desc: "Curadoria completa de ambientes internos — layout, mobiliário, iluminação, revestimentos e objetos de arte. Harmonioso, funcional e absolutamente seu.",
+    itens: ["Layout e fluxo espacial", "Especificação de materiais", "Projeto de iluminação", "Styling e ambientação"],
   },
   {
     num: "03",
     titulo: "Consultoria e Reforma",
-    desc: "Para quem quer renovar sem sair do lugar. Analise critica do espaco existente com solucoes precisas, dentro do orcamento e do prazo.",
-    itens: ["Analise do espaco atual", "Proposta de intervencao", "Gestao de fornecedores", "Acompanhamento executivo"],
+    desc: "Para quem quer renovar sem sair do lugar. Análise crítica do espaço existente com soluções precisas, dentro do orçamento e do prazo.",
+    itens: ["Análise do espaço atual", "Proposta de intervenção", "Gestão de fornecedores", "Acompanhamento executivo"],
   },
 ];
 
@@ -36,8 +36,8 @@ export default function ServicosSection() {
           transition={{ duration: 0.8, ease: EASE }}
           style={{ marginBottom: "6rem" }}
         >
-          <span className="label" style={{ display: "block", marginBottom: "1rem" }}>O que ofeco</span>
-          <h2 className="heading-lg" style={{ maxWidth: "500px" }}>Servicos<br /><em>sob medida.</em></h2>
+          <span className="label" style={{ display: "block", marginBottom: "1rem" }}>O que ofereço</span>
+          <h2 className="heading-lg" style={{ maxWidth: "500px" }}>Serviços<br /><em>sob medida.</em></h2>
         </motion.div>
 
         <div style={{ display: "flex", flexDirection: "column", gap: "0" }}>

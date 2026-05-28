@@ -1,3 +1,4 @@
+import IntroScreen    from "@/components/IntroScreen";
 import Header        from "@/components/Header";
 import HeroSection    from "@/components/HeroSection";
 import SobreSection   from "@/components/SobreSection";
@@ -10,6 +11,7 @@ import Footer          from "@/components/Footer";
 export default function Home() {
   return (
     <>
+      <IntroScreen />
       <Header />
       <main>
         <HeroSection />

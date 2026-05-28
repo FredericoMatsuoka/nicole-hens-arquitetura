@@ -19,15 +19,21 @@ const SmoothScrollHeroBackground: React.FC<SmoothScrollHeroProps> = ({
 }) => {
   const { scrollY } = useScroll();
 
-  const clipStart = useTransform(scrollY, [0, scrollHeight], [initialClipPercentage, 0]);
-  const clipEnd = useTransform(scrollY, [0, scrollHeight], [finalClipPercentage, 100]);
-  const clipPath = useMotionTemplate`polygon(${clipStart}% ${clipStart}%, ${clipEnd}% ${clipStart}%, ${clipEnd}% ${clipEnd}%, ${clipStart}% ${clipEnd}%)`;
-  const backgroundSize = useTransform(scrollY, [0, scrollHeight + 500], ["160%", "100%"]);
+  // Starts full-screen, shrinks as user scrolls
+  const clipStart = useTransform(scrollY, [0, scrollHeight], [0, initialClipPercentage]);
+  const clipEnd   = useTransform(scrollY, [0, scrollHeight], [100, finalClipPercentage]);
+  const clipPath  = useMotionTemplate`polygon(${clipStart}% ${clipStart}%, ${clipEnd}% ${clipStart}%, ${clipEnd}% ${clipEnd}%, ${clipStart}% ${clipEnd}%)`;
+
+  // Subtle zoom-in as image shrinks
+  const backgroundSize = useTransform(scrollY, [0, scrollHeight], ["100%", "118%"]);
+
+  // Fade out before the section ends so no white gap lingers
+  const opacity = useTransform(scrollY, [scrollHeight * 0.55, scrollHeight], [1, 0]);
 
   return (
     <motion.div
       className="sticky top-0 h-screen w-full bg-white"
-      style={{ clipPath, willChange: "clip-path" }}
+      style={{ clipPath, opacity, willChange: "clip-path, opacity" }}
     >
       <motion.div
         className="absolute inset-0 md:hidden"
@@ -37,7 +43,6 @@ const SmoothScrollHeroBackground: React.FC<SmoothScrollHeroProps> = ({
         className="absolute inset-0 hidden md:block"
         style={{ backgroundImage: `url(${desktopImage})`, backgroundSize, backgroundPosition: "center", backgroundRepeat: "no-repeat" }}
       />
-      {/* subtle dark overlay for text readability */}
       <div className="absolute inset-0 bg-black/10" />
     </motion.div>
   );

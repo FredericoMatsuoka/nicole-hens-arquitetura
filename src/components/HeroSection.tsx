@@ -1,15 +1,19 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import SmoothScrollHero from "@/components/ui/smooth-scroll-hero";
 
 const EASE = [0.16, 1, 0.3, 1] as [number, number, number, number];
 
 export default function HeroSection() {
+  const { scrollY } = useScroll();
+  const textOpacity = useTransform(scrollY, [0, 320], [1, 0]);
+  const textY       = useTransform(scrollY, [0, 320], [0, -28]);
+
   return (
     <section style={{ position: "relative", background: "#FFFFFF" }}>
-      {/* Intro text overlay (above the clip-path hero) */}
-      <div
+      {/* Text overlay */}
+      <motion.div
         style={{
           position: "absolute",
           top: 0, left: 0, right: 0,
@@ -19,6 +23,8 @@ export default function HeroSection() {
           flexDirection: "column",
           justifyContent: "flex-end",
           pointerEvents: "none",
+          opacity: textOpacity,
+          y: textY,
         }}
       >
         <motion.div
@@ -52,7 +58,7 @@ export default function HeroSection() {
                   initial={{ y: "110%" }}
                   animate={{ y: "0%" }}
                   transition={{ delay: 0.85, duration: 0.9, ease: EASE }}
-                  style={{ fontFamily: "var(--font-heading)", fontSize: "clamp(3.5rem, 8vw, 8rem)", fontWeight: 300, lineHeight: 0.95, letterSpacing: "-0.02em", color: "rgba(10,10,10,0.3)", fontStyle: "italic" }}
+                  style={{ fontFamily: "var(--font-heading)", fontSize: "clamp(3.5rem, 8vw, 8rem)", fontWeight: 300, lineHeight: 0.95, letterSpacing: "-0.02em", color: "#FFFFFF", fontStyle: "italic" }}
                 >
                   Arquitetura
                 </motion.p>
@@ -63,11 +69,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.1, duration: 0.8, ease: EASE }}
-              style={{ display: "flex", flexDirection: "column", gap: "1rem", maxWidth: "280px" }}
             >
-              <p style={{ fontFamily: "var(--font-body)", fontSize: "0.88rem", fontWeight: 300, lineHeight: 1.75, color: "rgba(10,10,10,0.5)" }}>
-                Espacos que traduzem identidade, elegancia e funcionalidade em cada detalhe.
-              </p>
               <motion.a
                 href="#projetos"
                 style={{ display: "inline-flex", alignItems: "center", gap: "0.6rem", fontFamily: "var(--font-body)", fontSize: "0.72rem", fontWeight: 400, letterSpacing: "0.15em", textTransform: "uppercase", color: "#0A0A0A" }}
@@ -82,11 +84,11 @@ export default function HeroSection() {
             </motion.div>
           </div>
         </motion.div>
-      </div>
+      </motion.div>
 
-      {/* Smooth scroll parallax hero */}
+      {/* Clip-path parallax hero — starts full, shrinks on scroll */}
       <SmoothScrollHero
-        scrollHeight={1400}
+        scrollHeight={750}
         desktopImage="/projects/suite-master.jpg"
         mobileImage="/projects/quarto-casal.jpg"
         initialClipPercentage={22}

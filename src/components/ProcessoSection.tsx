@@ -7,10 +7,10 @@ import { motion, useScroll, useTransform } from "framer-motion";
 const EASE: [number, number, number, number] = [0.16, 1, 0.3, 1];
 
 const etapas = [
-  { num: "01", titulo: "Escuta",       desc: "Conversa profunda para entender sua historia, rotina, gostos e sonhos. Sem pressa. O projeto comeca aqui." },
-  { num: "02", titulo: "Conceito",     desc: "Traducao das suas palavras em imagens, referencias e uma identidade visual unica para o seu projeto." },
-  { num: "03", titulo: "Projeto",      desc: "Desenvolvimento tecnico completo: plantas, perspectivas 3D, especificacoes de materiais e orcamentos." },
-  { num: "04", titulo: "Realizacao",   desc: "Acompanhamento da execucao, garantindo que cada detalhe do projeto seja fiel ao que foi planejado." },
+  { num: "01", titulo: "Escuta",      desc: "Conversa profunda para entender sua história, rotina, gostos e sonhos. Sem pressa. O projeto começa aqui." },
+  { num: "02", titulo: "Conceito",    desc: "Tradução das suas palavras em imagens, referências e uma identidade visual única para o seu projeto." },
+  { num: "03", titulo: "Projeto",     desc: "Desenvolvimento técnico completo: plantas, perspectivas 3D, especificações de materiais e orçamentos." },
+  { num: "04", titulo: "Realização",  desc: "Acompanhamento da execução, garantindo que cada detalhe do projeto seja fiel ao que foi planejado." },
 ];
 
 export default function ProcessoSection() {
@@ -84,9 +84,9 @@ export default function ProcessoSection() {
             {/* Quote overlay */}
             <div style={{ position: "absolute", bottom: "2.5rem", left: "2.5rem", right: "2.5rem", zIndex: 2 }}>
               <div style={{ fontFamily: "var(--font-heading)", fontSize: "1.2rem", fontStyle: "italic", fontWeight: 300, color: "rgba(255,255,255,0.9)", lineHeight: 1.5 }}>
-                &ldquo;Um projeto bonito e aquele que voce sente antes de ver.&rdquo;
+                &ldquo;Um projeto bonito é aquele que você sente antes de ver.&rdquo;
               </div>
-              <div className="label" style={{ marginTop: "1rem", fontSize: "0.58rem", opacity: 0.6 }}>Nicole Hens</div>
+              <div className="label" style={{ marginTop: "1rem", fontSize: "0.58rem", color: "rgba(255,255,255,0.55)" }}>Nicole Hens</div>
             </div>
           </motion.div>
         </div>

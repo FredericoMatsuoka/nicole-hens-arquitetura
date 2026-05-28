@@ -7,50 +7,50 @@ const EASE = [0.16, 1, 0.3, 1] as [number, number, number, number];
 
 const projetos = [
   {
-    title: "Suite Master",
-    description: "Residencia Privada — Quarto principal",
+    title: "Suíte Master",
+    description: "Residência Privada — Quarto principal",
     image: "/projects/suite-master.jpg",
     tag: "Residencial",
   },
   {
     title: "Sala de Estar",
-    description: "Residencia Privada — Living integrado",
+    description: "Residência Privada — Living integrado",
     image: "/projects/sala-estar.jpg",
     tag: "Interiores",
   },
   {
     title: "Sala de Jantar",
-    description: "Residencia Privada — Pedra + madeira",
+    description: "Residência Privada — Pedra + madeira",
     image: "/projects/jantar.jpg",
     tag: "Interiores",
   },
   {
-    title: "Escritorio",
+    title: "Escritório",
     description: "Projeto Corporativo — Home office premium",
     image: "/projects/escritorio.jpg",
     tag: "Corporativo",
   },
   {
     title: "Sala TV",
-    description: "Residencia Privada — Painel em madeira",
+    description: "Residência Privada — Painel em madeira",
     image: "/projects/sala-tv.jpg",
     tag: "Interiores",
   },
   {
-    title: "Suite Casal",
-    description: "Residencia Privada — Decoracao aconchegante",
+    title: "Suíte Casal",
+    description: "Residência Privada — Decoração aconchegante",
     image: "/projects/suite-2.jpg",
     tag: "Residencial",
   },
 ];
 
 const galeria = [
-  { src: "/projects/sala-sofa.jpg",    alt: "Sala com sofa bege" },
+  { src: "/projects/sala-sofa.jpg",    alt: "Sala com sofá bege" },
   { src: "/projects/quarto-estudo.jpg", alt: "Quarto com estudo integrado" },
-  { src: "/projects/quarto-casal.jpg",  alt: "Suite casal com forro em madeira" },
-  { src: "/projects/quarto-tv.jpg",     alt: "Quarto com painel TV" },
+  { src: "/projects/quarto-casal.jpg",  alt: "Suíte casal com forro em madeira" },
+  { src: "/projects/quarto-tv.jpg",     alt: "Quarto com painel de TV" },
   { src: "/projects/quarto-fem.jpg",    alt: "Quarto feminino com espelho" },
-  { src: "/projects/quarto-inf.jpg",    alt: "Quarto infantil com bicama" },
+  { src: "/projects/quarto-inf.jpg",    alt: "Quarto infantil com beliche" },
   { src: "/projects/moodboard.jpg",     alt: "Moodboard de materiais" },
 ];
 
@@ -72,11 +72,11 @@ export default function ProjetosSection() {
         </div>
         <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", flexWrap: "wrap", gap: "1.5rem" }}>
           <h2 className="heading-lg" style={{ color: "#0A0A0A" }}>
-            Criando espacos<br />
+            Criando espaços<br />
             <em style={{ color: "rgba(10,10,10,0.35)" }}>que inspiram</em>
           </h2>
           <p className="body-text" style={{ maxWidth: "320px" }}>
-            Cada projeto e uma historia unica — concebida a partir da identidade e do estilo de vida de cada cliente.
+            Cada projeto é uma história única — concebida a partir da identidade e do estilo de vida de cada cliente.
           </p>
         </div>
       </motion.div>
@@ -93,18 +93,18 @@ export default function ProjetosSection() {
 
       {/* Photo grid — remaining images */}
       <motion.div
-        className="container"
         initial={{ opacity: 0, y: 32 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.1 }}
         transition={{ duration: 0.8, ease: EASE }}
-        style={{ marginTop: "1.5px" }}
+        style={{ marginTop: "2px" }}
       >
         <div
           style={{
             display: "grid",
             gridTemplateColumns: "repeat(4, 1fr)",
-            gap: "1.5px",
+            gridAutoRows: "320px",
+            gap: "2px",
           }}
         >
           {galeria.map((img, i) => (
@@ -112,7 +112,6 @@ export default function ProjetosSection() {
               key={i}
               style={{
                 position: "relative",
-                aspectRatio: i === 0 ? "2 / 1.2" : "1 / 1",
                 overflow: "hidden",
                 gridColumn: i === 0 ? "span 2" : "span 1",
               }}
