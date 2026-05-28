@@ -18,7 +18,7 @@ export default function ContatoSection() {
   };
 
   return (
-    <section id="contato" style={{ padding: "10rem 0", background: "var(--color-nh-bg)" }}>
+    <section id="contato" style={{ padding: "10rem 0", background: "#FFFFFF" }}>
       <div className="container">
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "8rem", alignItems: "start" }} className="contato-grid">
 
@@ -41,17 +41,19 @@ export default function ContatoSection() {
             {/* Contact info */}
             <div style={{ display: "flex", flexDirection: "column", gap: "2rem" }}>
               {[
-                { label: "Instagram", value: "@nicolehens.arquitetura", href: "https://www.instagram.com/nicolehens.arquitetura" },
-                { label: "Localizacao", value: "Catalao, Goias — Brasil", href: "#" },
+                { label: "E-mail",        value: "nicolehens.arq@gmail.com",    href: "mailto:nicolehens.arq@gmail.com" },
+                { label: "WhatsApp",      value: "(64) 99960-7494",             href: "https://wa.me/5564999607494" },
+                { label: "Instagram",     value: "@nicolehens.arquitetura",     href: "https://www.instagram.com/nicolehens.arquitetura" },
+                { label: "Localizacao",   value: "Catalao, Goias — Brasil",     href: "#" },
               ].map((item) => (
                 <div key={item.label}>
-                  <div className="label" style={{ fontSize: "0.58rem", marginBottom: "0.4rem" }}>{item.label}</div>
+                  <div className="label" style={{ fontSize: "0.58rem", marginBottom: "0.4rem", color: "rgba(10,10,10,0.35)" }}>{item.label}</div>
                   <motion.a
                     href={item.href}
                     target={item.href.startsWith("http") ? "_blank" : undefined}
                     rel="noopener noreferrer"
-                    style={{ fontFamily: "var(--font-body)", fontSize: "0.95rem", color: "var(--color-nh-text)", borderBottom: "1px solid transparent" }}
-                    whileHover={{ color: "var(--color-nh-gold)", borderColor: "rgba(196,168,130,0.4)" }}
+                    style={{ fontFamily: "var(--font-body)", fontSize: "0.92rem", color: "rgba(10,10,10,0.65)", borderBottom: "1px solid transparent" }}
+                    whileHover={{ color: "#0A0A0A", borderColor: "rgba(10,10,10,0.3)" }}
                     transition={{ duration: 0.2 }}
                   >
                     {item.value}
@@ -72,9 +74,9 @@ export default function ContatoSection() {
               <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
-                style={{ padding: "4rem 3rem", border: "1px solid var(--color-nh-border)", borderRadius: "2px", textAlign: "center" }}
+                style={{ padding: "4rem 3rem", border: "1px solid rgba(10,10,10,0.1)", borderRadius: "2px", textAlign: "center" }}
               >
-                <div style={{ fontFamily: "var(--font-heading)", fontSize: "3rem", color: "var(--color-nh-gold)", marginBottom: "1rem" }}>Obrigada.</div>
+                <div style={{ fontFamily: "var(--font-heading)", fontSize: "3rem", color: "#0A0A0A", marginBottom: "1rem" }}>Obrigada.</div>
                 <p className="body-text">Em breve entrarei em contato para conversarmos sobre o seu projeto.</p>
               </motion.div>
             ) : (
@@ -85,7 +87,7 @@ export default function ContatoSection() {
                   { name: "telefone", label: "WhatsApp",     type: "tel",   required: false },
                 ].map((field) => (
                   <div key={field.name} style={{ display: "flex", flexDirection: "column", gap: "0.6rem" }}>
-                    <label htmlFor={field.name} className="label" style={{ fontSize: "0.58rem" }}>{field.label}</label>
+                    <label htmlFor={field.name} className="label" style={{ fontSize: "0.58rem", color: "rgba(10,10,10,0.35)" }}>{field.label}</label>
                     <input
                       id={field.name}
                       name={field.name}
@@ -93,31 +95,31 @@ export default function ContatoSection() {
                       required={field.required}
                       value={form[field.name as keyof typeof form]}
                       onChange={onChange}
-                      style={{ background: "transparent", border: "none", borderBottom: "1px solid var(--color-nh-border)", color: "var(--color-nh-text)", fontFamily: "var(--font-body)", fontSize: "0.95rem", padding: "0.8rem 0", outline: "none", transition: "border-color 0.2s" }}
-                      onFocus={(e) => (e.currentTarget.style.borderColor = "rgba(196,168,130,0.6)")}
-                      onBlur={(e) => (e.currentTarget.style.borderColor = "rgba(196,168,130,0.12)")}
+                      style={{ background: "transparent", border: "none", borderBottom: "1px solid rgba(10,10,10,0.15)", color: "#0A0A0A", fontFamily: "var(--font-body)", fontSize: "0.95rem", padding: "0.8rem 0", outline: "none", transition: "border-color 0.2s" }}
+                      onFocus={(e) => (e.currentTarget.style.borderColor = "rgba(10,10,10,0.5)")}
+                      onBlur={(e) => (e.currentTarget.style.borderColor = "rgba(10,10,10,0.15)")}
                     />
                   </div>
                 ))}
 
                 <div style={{ display: "flex", flexDirection: "column", gap: "0.6rem" }}>
-                  <label htmlFor="mensagem" className="label" style={{ fontSize: "0.58rem" }}>Fale sobre seu projeto</label>
+                  <label htmlFor="mensagem" className="label" style={{ fontSize: "0.58rem", color: "rgba(10,10,10,0.35)" }}>Fale sobre seu projeto</label>
                   <textarea
                     id="mensagem"
                     name="mensagem"
                     rows={4}
                     value={form.mensagem}
                     onChange={onChange}
-                    style={{ background: "transparent", border: "none", borderBottom: "1px solid var(--color-nh-border)", color: "var(--color-nh-text)", fontFamily: "var(--font-body)", fontSize: "0.95rem", padding: "0.8rem 0", outline: "none", resize: "none", transition: "border-color 0.2s" }}
-                    onFocus={(e) => (e.currentTarget.style.borderColor = "rgba(196,168,130,0.6)")}
-                    onBlur={(e) => (e.currentTarget.style.borderColor = "rgba(196,168,130,0.12)")}
+                    style={{ background: "transparent", border: "none", borderBottom: "1px solid rgba(10,10,10,0.15)", color: "#0A0A0A", fontFamily: "var(--font-body)", fontSize: "0.95rem", padding: "0.8rem 0", outline: "none", resize: "none", transition: "border-color 0.2s" }}
+                    onFocus={(e) => (e.currentTarget.style.borderColor = "rgba(10,10,10,0.5)")}
+                    onBlur={(e) => (e.currentTarget.style.borderColor = "rgba(10,10,10,0.15)")}
                   />
                 </div>
 
                 <motion.button
                   type="submit"
-                  style={{ alignSelf: "flex-start", display: "inline-flex", alignItems: "center", gap: "0.8rem", fontFamily: "var(--font-body)", fontSize: "0.72rem", letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--color-nh-bg)", background: "var(--color-nh-gold)", padding: "1rem 2.5rem", borderRadius: "2px", border: "none", cursor: "pointer" }}
-                  whileHover={{ scale: 1.03, filter: "brightness(1.08)" }}
+                  style={{ alignSelf: "flex-start", display: "inline-flex", alignItems: "center", gap: "0.8rem", fontFamily: "var(--font-body)", fontSize: "0.72rem", letterSpacing: "0.18em", textTransform: "uppercase", color: "#FFFFFF", background: "#0A0A0A", padding: "1rem 2.5rem", borderRadius: "2px", border: "none", cursor: "pointer" }}
+                  whileHover={{ scale: 1.03, opacity: 0.88 }}
                   whileTap={{ scale: 0.97 }}
                   transition={{ type: "spring", stiffness: 400, damping: 25 }}
                 >

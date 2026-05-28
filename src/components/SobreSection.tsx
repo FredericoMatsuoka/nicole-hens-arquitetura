@@ -32,11 +32,11 @@ export default function SobreSection() {
                 fill
                 style={{ objectFit: "cover" }}
               />
-              <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(12,11,9,0.3) 0%, transparent 60%)" }} />
+              <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(10,10,10,0.15) 0%, transparent 60%)" }} />
             </div>
 
-            {/* Gold accent line */}
-            <div style={{ position: "absolute", left: "-2rem", top: "3rem", bottom: "3rem", width: "1px", background: "linear-gradient(to bottom, transparent, var(--color-nh-gold), transparent)", opacity: 0.5 }} />
+            {/* Accent line */}
+            <div style={{ position: "absolute", left: "-2rem", top: "3rem", bottom: "3rem", width: "1px", background: "linear-gradient(to bottom, transparent, rgba(10,10,10,0.2), transparent)" }} />
 
             {/* Floating stat card */}
             <motion.div
@@ -44,9 +44,9 @@ export default function SobreSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, ease: EASE, delay: 0.4 }}
-              style={{ position: "absolute", bottom: "-2rem", right: "-2rem", background: "var(--color-nh-card)", border: "1px solid var(--color-nh-border)", padding: "2rem 2.5rem", borderRadius: "2px", backdropFilter: "blur(12px)" }}
+              style={{ position: "absolute", bottom: "-2rem", right: "-2rem", background: "#FFFFFF", border: "1px solid rgba(10,10,10,0.1)", padding: "2rem 2.5rem", borderRadius: "2px" }}
             >
-              <div style={{ fontFamily: "var(--font-heading)", fontSize: "3rem", fontWeight: 300, color: "var(--color-nh-gold)", lineHeight: 1 }}>42+</div>
+              <div style={{ fontFamily: "var(--font-heading)", fontSize: "3rem", fontWeight: 300, color: "#0A0A0A", lineHeight: 1 }}>42+</div>
               <div className="label" style={{ marginTop: "0.5rem", fontSize: "0.6rem" }}>Projetos entregues</div>
             </motion.div>
           </motion.div>
@@ -82,7 +82,7 @@ export default function SobreSection() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, ease: EASE, delay: 0.3 + i * 0.1 }}
                 >
-                  <div style={{ fontFamily: "var(--font-heading)", fontSize: "2.4rem", fontWeight: 300, color: "var(--color-nh-gold)", lineHeight: 1 }}>{s.value}</div>
+                  <div style={{ fontFamily: "var(--font-heading)", fontSize: "2.4rem", fontWeight: 300, color: "#0A0A0A", lineHeight: 1 }}>{s.value}</div>
                   <div className="label" style={{ marginTop: "0.5rem", fontSize: "0.58rem", color: "var(--color-nh-muted)" }}>{s.label}</div>
                 </motion.div>
               ))}

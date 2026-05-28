@@ -19,7 +19,7 @@ export default function ProcessoSection() {
   const imgScale = useTransform(scrollYProgress, [0, 1], [1.1, 1.0]);
 
   return (
-    <section ref={ref} id="processo" style={{ padding: "10rem 0", background: "var(--color-nh-surface)", overflow: "hidden" }}>
+    <section ref={ref} id="processo" style={{ padding: "10rem 0", background: "#F7F6F4", overflow: "hidden" }}>
       <div className="container">
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "8rem", alignItems: "center" }} className="processo-grid">
 
@@ -48,9 +48,9 @@ export default function ProcessoSection() {
                 >
                   {/* Connecting line */}
                   {i < etapas.length - 1 && (
-                    <div style={{ position: "absolute", left: "1.8rem", top: "4.5rem", bottom: "-0.5rem", width: "1px", background: "linear-gradient(to bottom, rgba(196,168,130,0.3), transparent)" }} />
+                    <div style={{ position: "absolute", left: "1.8rem", top: "4.5rem", bottom: "-0.5rem", width: "1px", background: "linear-gradient(to bottom, rgba(10,10,10,0.15), transparent)" }} />
                   )}
-                  <div style={{ fontFamily: "var(--font-heading)", fontSize: "1.1rem", fontWeight: 300, color: "var(--color-nh-gold)", paddingTop: "0.2rem" }}>
+                  <div style={{ fontFamily: "var(--font-heading)", fontSize: "1.1rem", fontWeight: 300, color: "rgba(10,10,10,0.4)", paddingTop: "0.2rem" }}>
                     {e.num}
                   </div>
                   <div>
@@ -78,12 +78,12 @@ export default function ProcessoSection() {
                 fill
                 style={{ objectFit: "cover" }}
               />
-              <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(12,11,9,0.5) 0%, transparent 60%)" }} />
+              <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(10,10,10,0.6) 0%, transparent 60%)" }} />
             </motion.div>
 
             {/* Quote overlay */}
             <div style={{ position: "absolute", bottom: "2.5rem", left: "2.5rem", right: "2.5rem", zIndex: 2 }}>
-              <div style={{ fontFamily: "var(--font-heading)", fontSize: "1.2rem", fontStyle: "italic", fontWeight: 300, color: "var(--color-nh-text)", lineHeight: 1.5, opacity: 0.9 }}>
+              <div style={{ fontFamily: "var(--font-heading)", fontSize: "1.2rem", fontStyle: "italic", fontWeight: 300, color: "rgba(255,255,255,0.9)", lineHeight: 1.5 }}>
                 &ldquo;Um projeto bonito e aquele que voce sente antes de ver.&rdquo;
               </div>
               <div className="label" style={{ marginTop: "1rem", fontSize: "0.58rem", opacity: 0.6 }}>Nicole Hens</div>

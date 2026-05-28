@@ -52,7 +52,7 @@ export default function ServicosSection() {
               className="servico-row"
             >
               {/* Number */}
-              <div style={{ fontFamily: "var(--font-heading)", fontSize: "3.5rem", fontWeight: 300, color: "var(--color-nh-gold)", opacity: 0.5, lineHeight: 1 }}>
+              <div style={{ fontFamily: "var(--font-heading)", fontSize: "3.5rem", fontWeight: 300, color: "rgba(10,10,10,0.18)", lineHeight: 1 }}>
                 {s.num}
               </div>
 
@@ -66,7 +66,7 @@ export default function ServicosSection() {
               <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: "0.8rem" }}>
                 {s.itens.map((item) => (
                   <li key={item} style={{ display: "flex", alignItems: "center", gap: "0.8rem" }}>
-                    <span style={{ width: "20px", height: "1px", background: "var(--color-nh-gold)", flexShrink: 0 }} />
+                    <span style={{ width: "20px", height: "1px", background: "rgba(10,10,10,0.35)", flexShrink: 0 }} />
                     <span className="body-text" style={{ fontSize: "0.9rem" }}>{item}</span>
                   </li>
                 ))}

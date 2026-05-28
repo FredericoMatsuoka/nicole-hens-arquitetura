@@ -4,22 +4,23 @@
 @import "tailwindcss";
 
 @theme inline {
-  /* Nicole Hens — Design Tokens */
-  --color-nh-bg:       #0C0B09;
-  --color-nh-surface:  #141210;
-  --color-nh-card:     #1A1815;
-  --color-nh-border:   rgba(196, 168, 130, 0.12);
-  --color-nh-text:     #E8E2D6;
-  --color-nh-muted:    rgba(232, 226, 214, 0.45);
+  /* Nicole Hens — Branco & Preto */
+  --color-nh-bg:       #FFFFFF;
+  --color-nh-bg-2:     #F7F6F4;
+  --color-nh-surface:  #F2F0ED;
+  --color-nh-dark:     #0A0A0A;
+  --color-nh-dark-2:   #1A1A1A;
+  --color-nh-text:     #0A0A0A;
+  --color-nh-muted:    rgba(10, 10, 10, 0.45);
+  --color-nh-border:   rgba(10, 10, 10, 0.1);
   --color-nh-gold:     #C4A882;
-  --color-nh-gold-dim: rgba(196, 168, 130, 0.2);
 
   --font-heading: "Cormorant Garamond", Georgia, serif;
   --font-body:    "DM Sans", system-ui, sans-serif;
 }
 
 :root {
-  --header-h: 7rem;
+  --header-h: 6rem;
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -40,7 +41,6 @@ body {
 
 a { text-decoration: none; color: inherit; }
 
-/* ── Utilities ── */
 .container {
   width: 100%;
   max-width: 1320px;
@@ -80,25 +80,24 @@ a { text-decoration: none; color: inherit; }
 
 .label {
   font-family: var(--font-body);
-  font-size: 0.7rem;
+  font-size: 0.68rem;
   font-weight: 500;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--color-nh-gold);
+  color: var(--color-nh-text);
 }
 
 .body-text {
   font-family: var(--font-body);
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 300;
-  line-height: 1.75;
+  line-height: 1.8;
   color: var(--color-nh-muted);
 }
 
-/* ── Divider line ── */
 .divider {
-  width: 40px;
+  width: 36px;
   height: 1px;
-  background: var(--color-nh-gold);
-  opacity: 0.6;
+  background: var(--color-nh-text);
+  opacity: 0.4;
 }
